@@ -77,7 +77,7 @@ namespace assessment1
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=first}/{action=homepage}/{id?}");
             });
         }
     }
