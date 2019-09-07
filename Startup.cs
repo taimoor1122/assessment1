@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using assessment1.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using assessment1.Models;
 
 namespace assessment1
 {
@@ -38,6 +39,12 @@ namespace assessment1
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<DESIGNContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("FIT")));
+
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
